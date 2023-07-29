@@ -1,0 +1,399 @@
+html{
+    height: 100%;
+    scroll-behavior: smooth;
+}
+body, ul, li, p{
+    margin:0px;
+    padding: 0px;
+    font-size:1.2rem;
+    font-family:Arial, Helvetica, sans-serif;
+    /* background-color: #303030; */
+}
+/*Area do header*/
+/*----------------------------------------------------------------------------------------------------------------*/
+header{
+    /*background-image: linear-gradient(to right, rgb(176, 106, 241), #95FEFE);*/
+    background-image: linear-gradient(to right, rgb(176, 106, 241), rgb(91, 21, 156));
+    display: flex; /*Distribuir o menu e o banner*/
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+}
+header nav a{
+    /*background-color: #f73f3f;*/
+    background-color: #7c17ff;
+    border-radius: 10px ;
+    text-decoration: none;
+    font-size: 25px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    margin-left: 6px; /*Afastar um pouco do outro*/
+    padding: 7px; /*Da aparencia de um botao*/
+}
+header nav a:hover{
+    background-color: rgb(247, 105, 105);
+    color: #ffffff;
+}
+.logo img{
+    max-width: 100%;
+    width: 300px; /*O banner fica mt grande sem isso*/
+    display: block;
+    margin: 0 auto;
+}
+/* paginacao laravel */
+/*----------------------------------------------------------------------------------------------------------------*/
+.pagination {
+    display: flex;
+    justify-content: right;
+    justify-items: auto;
+    list-style: none;
+}
+.page-item{
+    color: #7c17ff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 6px;
+}
+.page-item a{
+    text-decoration: none;
+    color: inherit;
+}
+
+/*Area das sections*/
+/*----------------------------------------------------------------------------------------------------------------*/
+.boxLista h1{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    text-shadow: 2pt 2pt #5f5f5f;
+}
+.boxLista section{
+   border-bottom: solid;
+   border-width: 1px;
+}
+main{
+    /*margin: -10px; */
+    max-width: 1000px;
+    font-family: gotham, arial, helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0 auto !important; /* centraliza o main deixando espacos de lado*/
+    padding: 15px;
+    width: 100%;
+
+
+}
+.Pesquisar{
+    display: block;
+    margin: 0 auto;
+    padding: 6px;
+    color: #7c17ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    text-align: right;
+}
+.search-form{
+    display: flex;
+    justify-content: right;
+}
+.search-form label input{
+    border-color: #7c17ff;
+    border-radius: 4px;
+    padding: 6px;
+}
+.search-form label input:hover{ background-color: #efe9a2;}
+.search-form button{
+    border: none;
+    padding: 6px;
+    background-color: inherit;
+    color: #7c17ff;
+    cursor: pointer;
+}
+.PreLista{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    color: #7c17ff;
+    margin-top: 2px;
+}
+.PreLista div{
+    font-size: 18pt;
+}
+.category-dropdown-wrapper{
+    margin-bottom: 6px;
+}
+.category-dropdown-btn{
+    font-size: 16pt;
+    border-color: #7c17ff;
+    border-radius: 6px;
+    background-color: #f6ecec;
+    color: inherit;
+}
+.category-dropdown-options{
+    margin-top: 4px;
+    background-color: lightgray;
+    padding: 3px;
+    border-radius: 6px;
+
+}
+.category-dropdown-options a:hover{
+    background-color: #c9bfbf;
+}
+.category-dropdown-options a{
+    text-decoration: none;
+    color: inherit;
+    font-size: small;
+    display: block;
+    padding: 3px;
+    text-align: left;
+}
+.bg-ativo{
+    background-color: rgb(167, 167, 252);
+}
+/* Area dos Posts e da Lista */
+.BoxManga{
+    /*color: #202020; */
+    color: #ffef0d;
+    text-shadow: 1pt 1pt black;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin: 10px 5px;
+}
+.BoxManga p{
+    text-align: center;
+    margin: 25% auto;
+}
+
+.BoxPost{
+    /*color: #202020; */
+    color: #fff41e;
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+    /*display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;*/
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 5px;
+    margin: 10px 5px;
+}
+.BoxPost p{
+    text-align: center;
+    margin: 10px;
+}
+
+.PostTitulo{
+    margin: 0 auto;
+    text-align: center;
+}
+
+.PostDetalhes{
+    margin: 2px 2px;
+    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+}
+
+.PostDetalhesItem{
+    text-shadow: none;
+    color: #454545;
+}
+.PostDetalhesItem a{ text-decoration:none; color:inherit; }
+.small-text{font-size: 10pt;}
+
+main .sobre{
+
+}
+.texto-contato{
+max-width: 700px;
+border-right: solid;
+border-width: 1px;
+}
+.contato{
+    padding-left: 10px;
+}
+.sobre{
+    display: flex; /*Distribuir o menu e o banner*/
+    flex-wrap: wrap;
+}
+.editor{
+    display: flex; /*Distribuir o menu e o banner*/
+    flex-wrap:nowrap;
+    align-items: center;
+}
+.MangaThumb{
+     margin: 5px; /*Da um espacinho envolta da thumb*/
+}
+.MangaThumb img{
+    max-width: 100%;
+    width: 150px; /*Senao fica muito grande*/
+    max-height: 200px;
+    border: 4px solid #430852;
+    border-radius: 4px;
+}
+/* other navigators */
+.corner-button{
+    position: fixed;
+    right:4px;
+    bottom:8px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 8px;
+    list-style: none;
+}
+.corner-button li a{
+    text-decoration: none;
+    color:inherit;
+}
+/*final da area das sections*/
+/*----------------------------------------------------------------------------------------------------------------*/
+.Comments{
+    margin: 0 auto;
+    background-color: #eeeeee;
+    border-radius: 6px;
+}
+.comment-sec{
+    margin: 0 auto;
+}
+.comment-sec-title{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+}
+.comment-header img{
+    width: 54px;
+}
+.comment-wrapper{
+    background-color: rgb(241, 238, 238);
+    border-radius: 5px;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.comment-content{
+    margin: auto 0px;
+}
+.comment-form-header{
+    background-image: none;
+    background-color: inherit;
+
+
+}
+.comment-form-title{
+    font-family: Arial, sans-serif;
+    font-size: medium;
+    font-weight: lighter;
+}
+.comment-form-user-name{
+    font-family: inherit;
+    font-size: medium;
+    font-weight: bold;
+}
+.comment-form-user-thumb{
+    border-radius: 10px;
+}
+.comment-form-content{
+    margin: 8px 5px;
+    padding: 5px;
+    color: black;
+}
+.comment-form-content-text{
+    width: 100%;
+    color: black;
+    border: 1px solid rgb(250,250,250);
+    border-radius: 2%;
+    background-color: rgb(245,245,245);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.comment-form-content-text:focus{
+    border-color: rgb(200,200,200);
+}
+.comment-form-content-text:hover{
+    background-color: #dfc7fd;
+    border-color: #cca6fd;
+}
+.comment-button-row{
+    margin-left: 50%;
+
+}
+.comment-button{
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: rgb(69 147 255);
+    color: white;
+    text-shadow: 1px 1px black;
+    border-color: rgb(69 147 255);
+    border-radius: 16%;
+}
+/*Area do footer*/
+/*----------------------------------------------------------------------------------------------------------------*/
+footer{
+    width: 100%;
+    /*background-image: linear-gradient(to right, white, #95FEFE);*/
+    /*degrade de branco para azul para direita*/
+    background-image: linear-gradient(to right, rgb(176, 106, 241), rgb(91, 21, 156));
+    display:flex; /*flex*/
+    flex-wrap:wrap;/*quando não caber mais, passa para a outra linha */
+    align-items: center;/* alinha os itens no centro*/
+    flex-direction: column; /* deixa um em baixo do outro*/
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+footer p{
+    margin: 5px;
+    font-weight: bold;/*negrito*/
+}
+footer img{
+    max-width: 100%;
+    width: 110px; /*O banner fica mt grande sem isso*/
+}
+
+/*final da area do footer*/
+/*----------------------------------------------------------------------------------------------------------------*/
+
+/* AREA ADICIONAIS (FORMS, OUTROS) */
+.register-section{
+    margin: 0 auto;
+}
+.form-wrapper{
+    margin: 0 auto;
+    background-color: inherit;
+}
+.form-wrapper form{
+    text-align: center;
+
+}
+.form-wrapper form label{
+    margin-right: 10px;
+
+}
+.form-wrapper form input{
+    border-radius: 4px;
+    border-color: white;
+    margin-top: 6px;
+    margin-left: 10px;
+}
+.form-wrapper form button{
+    margin: 6px;
+    color: lightseagreen;
+    background-color: white;
+    border-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: right;
+}
+
+/* ============= FLASH MESSAGES ============== */
+.flash-message{
+    position: fixed;
+    background-color: rgb(137, 53, 238);
+    color: #fce938;
+    border: 1px solid lightyellow;
+    border-radius: 2px;
+    text-align: center;
+    z-index: 10;
+    font-family: "Source Code Pro", sans-serif, Arial;
+    font-size: 1.4rem;
+    padding: 10px;
+    margin: 8px 8px 8px 20px;
+}
