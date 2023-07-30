@@ -64,6 +64,18 @@ class PostController extends Controller
         ]);
     }
 
+    public function dashboard()
+    {
+        return view('post.dashboard',
+            ['title' => 'Beloblog | Dashboard',
+                'posts' => Post::latest('published_at')->filter(
+                    request(['searchQuery','author'])
+                )->with('author')
+                    ->paginate(10)->withQueryString(),
+            ]
+        );
+    }
+
     /**
      * Gera uma View que recebe um all() de Category e lista formulario de criar post
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
@@ -152,5 +164,12 @@ class PostController extends Controller
         //Sending it
         $post->update($request);
         return redirect('/blog')->with('successMessage','Post atualizado com sucesso!!');
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return back()->with('successMessage','Post deletado com sucesso!!');
     }
 }

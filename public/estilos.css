@@ -414,6 +414,40 @@ footer img{
     max-width: 100%;
     width: 400px;
 }
+/* ============= TABLE SHENANIGANS ============== */
+table thead tr th{
+    font-family: inherit;
+    font-size: 18pt;
+}
+th,td{
+    padding-left: 20px;
+}
+tr {
+    padding-top: 10px;
+    border-top: 1px solid black;
+}
+.table-item-title{
+    text-decoration: none;
+    color: #7c17ff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-bottom: 2px;
+}
+.table-author{
+    display: block;
+    font-size: small;
+    text-decoration: none;
+    color: #4a5568;
+}
+.table-option{
+    font-size: 14pt;
+    text-decoration: none;
+    color: cornflowerblue;
+
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
 /* ============= FLASH MESSAGES ============== */
 .flash-message{
     position: fixed;

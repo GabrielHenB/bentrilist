@@ -2,7 +2,7 @@
 A web application project written in PHP Laravel  for a fictional list database site called Bentrilist. I aim to practice 
 front-end and back-end development using this project.
 
-## What I am using here:
+## What am I using here:
 
 ![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)
