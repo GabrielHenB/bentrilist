@@ -101,10 +101,15 @@ Route::get('/logout',[App\Http\Controllers\SesController::class, 'destroy'])->mi
 Route::post('/login',[App\Http\Controllers\SesController::class, 'store']);
 
 //Isso usa o middleware AdminCheck.php para checar se o auth eh logado e eh um admin
-Route::get('/adm/posts/create', 'App\Http\Controllers\PostController@create')->middleware('admin');
-Route::post('/adm/posts/create',[App\Http\Controllers\PostController::class,'store'])->middleware('admin');
-Route::get('/adm/dashboard',[App\Http\Controllers\PostController::class,'dashboard'])->middleware('admin');
-Route::get('/adm/posts/edit/{post}',[App\Http\Controllers\PostController::class,'edit'])->middleware('admin');
-Route::patch('/adm/posts/edit/{post:id}',[App\Http\Controllers\PostController::class,'update'])->middleware('admin');
-Route::delete('/adm/posts/delete/{post:id}',[App\Http\Controllers\PostController::class,'destroy'])->middleware('admin');
+//Obs: O {post:id} se deve ao fato de ter usado o getRouteKeyName no model Post mudando o bind esperado default id
+Route::middleware('admin')->group(function () {
+    Route::get('/adm/posts/create', 'App\Http\Controllers\PostController@create');
+    Route::post('/adm/posts/create',[App\Http\Controllers\PostController::class,'store']);
+    Route::get('/adm/dashboard',[App\Http\Controllers\PostController::class,'dashboard']);
+    Route::get('/adm/posts/edit/{post}',[App\Http\Controllers\PostController::class,'edit']);
+    Route::patch('/adm/posts/edit/{post:id}',[App\Http\Controllers\PostController::class,'update']);
+    Route::delete('/adm/posts/delete/{post:id}',[App\Http\Controllers\PostController::class,'destroy']);
+});
+
+
 Route::get('/all', 'App\Http\Controllers\ListController@index');

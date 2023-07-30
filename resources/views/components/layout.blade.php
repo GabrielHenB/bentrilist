@@ -92,6 +92,7 @@
             <a id="bLogar" href="/login">Entrar</a>
             <a id="bLogar" href="/register">Cadastrar</a>
         @else
+            @can('admin')
             <!--<a id="bLogar" href="/adm/posts/create">Adm</a>-->
             <x-generic-dropdown btnId="admMenu">
                 <x-slot name="trigger">
@@ -101,6 +102,7 @@
                 <x-dropdown-item :ativo="request()->is('/adm/posts/create')" href="/adm/posts/create">Create</x-dropdown-item>
 
             </x-generic-dropdown>
+            @endcan
             <a id="bLogar" href="/logout">Sair ({{auth()->user()->name}})</a>
         @endif
         <a id="aboutUs" href="#sobreNos">Sobre nos</a>

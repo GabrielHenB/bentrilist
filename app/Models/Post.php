@@ -58,6 +58,11 @@ class Post extends Model
                 $query->where('username',htmlspecialchars(strip_tags($author)))));
     }
 
+    /**
+     * Get the route key for the model.
+     * Isso muda o comportamento do Route Binding que agora espera slug ao inves do default id
+     * @return string
+     */
     public function getRouteKeyName(): string
     {
         //Will return the equivalent slug thingy

@@ -23,7 +23,8 @@ class AdminCheck
         */
 
         //Agora sim checa se o user esta logado pelo ? e se eh admin
-        if(auth()->user()?->username != "Admin"){
+        //O cannot verifica o Gate definido em AppServiceProvider.php
+        if(auth()->user()?->cannot('admin')){
             //This aborts with a error code generating an exception with it
             //Also could be just abort(403);
             abort(403);
