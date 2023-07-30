@@ -59,7 +59,7 @@ class PostController extends Controller
         return view('post.show', [
             'post' => $post,
             'posts' => [],
-            'title' => 'Laraferst',
+            'title' => 'Bentrilist',
 
         ]);
     }

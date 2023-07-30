@@ -72,8 +72,12 @@
             });
 
 
+
         };
     </script>
+    <!-- Alpine JS -->
+    <!-- usado para eventos de dropdown -->
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body>
 <header>
@@ -89,7 +93,14 @@
             <a id="bLogar" href="/login">Entrar</a>
             <a id="bLogar" href="/register">Cadastrar</a>
         @else
-            <a id="bLogar" href="/adm/posts/create">Adm</a>
+            <!--<a id="bLogar" href="/adm/posts/create">Adm</a>-->
+            <x-generic-dropdown btnId="admMenu">
+                <x-slot name="trigger">
+                    Adm
+                </x-slot>
+                <x-dropdown-item :ativo="request()->is('/adm/dashboard')" href="/adm/dashboard">Dashboard</x-dropdown-item>
+                <x-dropdown-item :ativo="request()->is('/adm/posts/create')" href="/adm/posts/create">Create</x-dropdown-item>
+            </x-generic-dropdown>
             <a id="bLogar" href="/logout">Sair ({{auth()->user()->name}})</a>
         @endif
         <a id="aboutUs" href="#sobreNos">Sobre nos</a>

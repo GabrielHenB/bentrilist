@@ -1,6 +1,6 @@
 {{--@extends('layout')--}}
 {{--@section('content')--}}
-<x-layout title="Laraferst | Create">
+<x-layout title="Bentrilist | Create">
     @section('title-2')
         <h1 id="suaLista">Admin > Create</h1>
     @endsection
@@ -10,14 +10,9 @@
                 <form class="register form col-12" method="POST" action="/adm/posts/create" enctype="multipart/form-data">
                     {{-- isso aloca um csrf token --}}
                     @csrf
+                    <x-form.input-comp name="title" />
+
                     <div class="register form-item mb-3">
-                        <label class="register form-label" for="title">
-                            Titulo
-                        </label>
-                        <input class="register form-control" type="text" name="title" value="{{old('title')}}" required/>
-                        @error('title')
-                        <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">{{$message}}</p>
-                        @enderror
                         @error('slug')
                         <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">
                             O titulo já existe e resultou em:
@@ -25,34 +20,13 @@
                         </p>
                         @enderror
                     </div>
-                    <div class="register form-item mb-3">
-                        <label class="register form-label" for="excerpt">
-                            Sobre
-                        </label>
-                        <textarea class="register form-control" type="text" name="excerpt" required></textarea>
-                        {{-- O $message eh provido pelo error em si --}}
-                        @error('excerpt')
-                        <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="register form-item mb-3">
-                        <label class="register form-label" for="body">
-                            Enredo
-                        </label>
-                        <textarea class="register form-control" rows='3' type="email" name="body" value="" required></textarea>
-                        @error('body')
-                        <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">{{$message}}</p>
-                        @enderror
-                    </div>
-                    <div class="register form-item mb-3">
-                        <label class="register form-label" for="thumbnail">
-                            Thumb
-                        </label>
-                        <input class="register form-control" type="file" name="thumbnail" />
-                        @error('thumbnail')
-                        <p class="text-red-500 text-xs mt-1" style="color: red; font-size: x-small;">{{$message}}</p>
-                        @enderror
-                    </div>
+
+                    <x-form.text-input-comp name="excerpt" />
+
+                    <x-form.text-input-comp name="body" />
+
+                    <x-form.input-comp name="thumbnail" type="file" />
+
                     <div class="register form-item mb-3">
                         <label class="register form-label" for="category_id">
 

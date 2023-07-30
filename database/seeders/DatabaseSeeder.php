@@ -86,7 +86,7 @@ class DatabaseSeeder extends Seeder
             "body" => "Achei interessante!"
         ]);
 
-        \App\Models\Post::factory(10)->create();
+        \App\Models\Post::factory(2)->create();
         \App\Models\Comment::factory(4)->create();
 
         //$nuser = \App\Models\User::factory(2)->create();
