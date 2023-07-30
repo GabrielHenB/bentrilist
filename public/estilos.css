@@ -407,7 +407,13 @@ footer img{
     cursor: pointer;
     text-align: right;
 }
-
+.form-item{
+    margin-bottom: 6px;
+}
+.form-control{
+    max-width: 100%;
+    width: 400px;
+}
 /* ============= FLASH MESSAGES ============== */
 .flash-message{
     position: fixed;

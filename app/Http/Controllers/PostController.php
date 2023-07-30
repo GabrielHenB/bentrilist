@@ -114,4 +114,43 @@ class PostController extends Controller
         Post::create($request);
         return redirect('/blog')->with('successMessage','Post realizado com sucesso!!');
     }
+
+    public function edit(Post $post)
+    {
+        //Para o dropdown categorias
+        $cats = \App\Models\Category::all();
+        return view('post.edit',['post'=>$post,'cats'=>$cats]);
+    }
+
+    public function update(Post $post)
+    {
+        //A bit of sanitization
+        $request = request();
+        foreach($request->all() as $chave=>$valor){
+            $request[$chave] = filter_var($valor,FILTER_SANITIZE_SPECIAL_CHARS);
+        }
+        //A bit of validation
+        /**
+         * Title required
+         * Excerpt required
+         * Body required
+         * Category_id required and must exist in column id in table categories
+         * Slug required and must be unique in posts table
+         */
+        $request = $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'thumbnail' => 'image',
+            'category_id' => ['required', \Illuminate\Validation\Rule::exists('categories','id')],
+            'slug' => ['required',\Illuminate\Validation\Rule::unique('posts','slug')->ignore($post->id)],
+        ]);
+        //Additional things that dont need validation now
+        //$request['user_id'] = auth()->user()->id;
+        if(isset($request['thumbnail']))
+            $request['thumbnail'] = request()->file('thumbnail')->store('thumbnails'); //Returns URL
+        //Sending it
+        $post->update($request);
+        return redirect('/blog')->with('successMessage','Post atualizado com sucesso!!');
+    }
 }

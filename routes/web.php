@@ -48,11 +48,14 @@ Route::get('posts/{post}', function ($slug) {
 /**
  * BLOG 'POST' ROUTE
  * Returns a view with one specific post
+ * Uses implicit Model Route binding, and understands that since {post} is given
+ * it will query trying to find a post Model if a unique slug is passed through
  */
 Route::get('posts/{post}', [App\Http\Controllers\PostController::class,'show'])->name('aPost');
 
 /**
  * BLOG COMMENT STORE ROUTE
+ * Nesse explicitamente indicamos que a propriedade slug de um Model Post sera usada
  */
 Route::post('posts/{post:slug}/comment', [App\Http\Controllers\CommentController::class, 'store']);
 
@@ -100,5 +103,7 @@ Route::post('/login',[App\Http\Controllers\SesController::class, 'store']);
 //Isso usa o middleware AdminCheck.php para checar se o auth eh logado e eh um admin
 Route::get('/adm/posts/create', 'App\Http\Controllers\PostController@create')->middleware('admin');
 Route::post('/adm/posts/create',[App\Http\Controllers\PostController::class,'store'])->middleware('admin');
+Route::get('/adm/posts/edit/{post}',[App\Http\Controllers\PostController::class,'edit'])->middleware('admin');
+Route::patch('/adm/posts/edit/{post:id}',[App\Http\Controllers\PostController::class,'update'])->middleware('admin');
 
 Route::get('/all', 'App\Http\Controllers\ListController@index');

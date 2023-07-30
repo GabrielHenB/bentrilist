@@ -100,6 +100,7 @@
                 </x-slot>
                 <x-dropdown-item :ativo="request()->is('/adm/dashboard')" href="/adm/dashboard">Dashboard</x-dropdown-item>
                 <x-dropdown-item :ativo="request()->is('/adm/posts/create')" href="/adm/posts/create">Create</x-dropdown-item>
+
             </x-generic-dropdown>
             <a id="bLogar" href="/logout">Sair ({{auth()->user()->name}})</a>
         @endif
