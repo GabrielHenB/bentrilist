@@ -111,5 +111,3 @@ Route::middleware('admin')->group(function () {
     Route::delete('/adm/posts/delete/{post:id}',[App\Http\Controllers\PostController::class,'destroy']);
 });
 
-
-Route::get('/all', 'App\Http\Controllers\ListController@index');

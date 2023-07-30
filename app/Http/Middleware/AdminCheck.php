@@ -6,6 +6,11 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Classe Middleware que faz verificacao de autorizacao
+ * atraves de um Gate definido em AppServiceProvider.php
+ * Depois pode ser substituida pelo Middleware Can do Laravel
+ */
 class AdminCheck
 {
     /**

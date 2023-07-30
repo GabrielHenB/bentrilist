@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        //Indica que o paginador use o Bootstrap 4. No momento nao incorporado ao estilo que ja existia no projeto
         Paginator::useBootstrapFour();
 
         //Isso testa se um usuario tera a abilidade admin caso passe pelo metodo callback
