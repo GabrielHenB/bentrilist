@@ -15,7 +15,14 @@ front-end and back-end development using this project.
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
 ## Developers:
-<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >Gabriel B</a><br>
+Gabriel B <br>
+<a href='https://github.com/GabrielHenB' >
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+</a>
+<a href='https://br.linkedin.com/in/gabriel-braz-4a6b06224?trk=people-guest_people_search-card' >
+![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)
+</a>
+
 
 ## About Laravel:
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
