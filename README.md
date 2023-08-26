@@ -1,6 +1,12 @@
 # Bentrilist Project
-A web application project written in PHP Laravel  for a fictional list database site called Bentrilist. I aim to practice 
+A web application project written in PHP Laravel  for a fictional list and blog site called Bentrilist. I aim to practice 
 front-end and back-end development using this project.
+
+At the moment, Bentrilist has:
+- Posts (itens on the list) and comments (with posts CRUD endpoints)
+- Authentication through login and register endpoints (inc CSRF protection that is native to Laravel)
+- Uses Laravel Blade templating engine, mostly through the components api.
+- Employs mostly pure CSS styling with some bootstrap sections which are currently not in use althrough Bootstrap is listed as a dependency.
 
 ## What am I using here:
 
